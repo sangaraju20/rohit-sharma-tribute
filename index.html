@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit Sharma - The Hitman | Tribute & Quiz</title>
+    <style>
+        :root {
+            --primary-blue: #003366;
+            --accent-gold: #FFD700;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), #004080);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 50%;
+            border: 4px solid var(--accent-gold);
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+        }
+
+        .bio h2 {
+            color: var(--primary-blue);
+            margin-top: 0;
+        }
+
+        .quiz-section h3 {
+            color: var(--primary-blue);
+        }
+
+        .options-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background-color: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #002244;
+            transform: translateY(-2px);
+        }
+
+        #quiz-result {
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .success {
+            color: #28a745;
+        }
+
+        .error {
+            color: #dc3545;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #e2e8f0;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Rohit Sharma</h1>
+        <p>The Hitman of World Cricket</p>
+    </header>
+
+    <div class="container">
+        <!-- Visual & Bio Section -->
+        <div class="card bio">
+            <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80" alt="Cricket Stadium representing Rohit Sharma's legacy" class="profile-img">
+            <h2>The Maestro of Elegance & Power</h2>
+            <p>
+                Rohit Gurunath Sharma is widely regarded as one of the greatest opening batsmen in modern cricket history. 
+                Holding the record for the highest individual score in One Day Internationals (264) and multiple double centuries, 
+                his effortless timing, majestic pull shots, and calm leadership have inspired millions around the globe.
+            </p>
+        </div>
+
+        <!-- Interactive Quiz Section -->
+        <div class="card quiz-section">
+            <h3>Interactive Cricket Quiz</h3>
+            <p>Which signature cricket shot is Rohit Sharma most famous for playing with effortless ease?</p>
+            
+            <div class="options-group">
+                <button class="btn" onclick="checkAnswer('pull')">Pull Shot</button>
+                <button class="btn" onclick="checkAnswer('straight')">Straight Drive</button>
+            </div>
+
+            <div id="quiz-result"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Built with passion for cricket enthusiasts &bull; Rohit Sharma Tribute App</p>
+    </footer>
+
+    <script>
+        function checkAnswer(choice) {
+            const resultDiv = document.getElementById('quiz-result');
+            if (choice === 'pull') {
+                resultDiv.innerHTML = "Correct! The Pull Shot is Rohit Sharma's signature trademark stroke against fast bowlers.";
+                resultDiv.className = "success";
+            } else {
+                resultDiv.innerHTML = "Not quite! While he plays a great straight drive, he is world-famous for his iconic Pull Shot.";
+                resultDiv.className = "error";
+            }
+        }
+    </script>
+
+</body>
+</html>
